@@ -102,4 +102,15 @@ div.balance{
   }
 }
 
+@media screen and (max-width: 768px){
+  div.balance{
+    div.flex{
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      width: 100%;
+    }
+  }
+}
+
 </style>

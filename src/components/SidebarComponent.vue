@@ -1,5 +1,11 @@
 <template>
-  <div>
+  <div class="sidebar">
+    <div class="close">
+      <div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
     <div id="logo">
       <img src="../assets/minance_logo.png" alt="logo" draggable="false">
       <h1>inance</h1>
@@ -69,6 +75,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+div.sidebar{
+
+}
 div#logo{
   display: flex;
   justify-content: left;
@@ -117,6 +126,43 @@ div.logout{
     }
     p{
       color: black;
+    }
+  }
+}
+div.close{
+  display: none;
+}
+@media screen and (max-width: 768px){
+  div#logo{
+    justify-content: center;
+  }
+  div.close{
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    div{
+      position: relative;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      .line{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 2px;
+        background: white;
+        transition: all 0.3s ease;
+        &:first-child{
+          transform: rotate(45deg);
+        }
+        &:last-child{
+          transform: rotate(-45deg);
+        }
+      }
     }
   }
 }

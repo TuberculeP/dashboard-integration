@@ -1,5 +1,13 @@
 <template>
-  <div>
+  <div class="main">
+    <div class="burger left">
+      <div class="triangle"></div>
+    </div>
+    <div class="burger right">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
     <MainHeader/>
     <main>
       <MainBalance/>
@@ -61,5 +69,46 @@ main{
       color: white;
     }
   }
+}
+div.burger{
+  display: none;
+}
+@media screen and (max-width: 768px){
+  main>div{
+    padding: 20px;
+  }
+  div.transactions{
+    h4{
+      margin: 0;
+    }
+  }
+  div.burger{
+    display: block;
+    position: absolute;
+    z-index: 100;
+    &.right{
+      top: 20px;
+      right: 20px;
+      .line{
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        border-radius: 50px;
+      }
+    }
+    &.left{
+      top: 20px;
+      left: 20px;
+      .triangle{
+        width: 0;
+        height: 0;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-left: 20px solid white;
+      }
+    }
+  }
+
 }
 </style>

@@ -18,9 +18,10 @@
         <path d="M4 7.04242C6.73136 9.3383 14.7845 12.5525 25.146 7.04242C35.5076 1.53231 42.151 4.74654 44.1774 7.04242C46.4683 10.3223 52.8473 15.898 60.037 11.9622C69.024 7.04242 74.3105 2.12267 86.4695 7.04242C98.6285 11.9622 108.408 16.8819 112.902 11.9622C117.396 7.04242 142.506 2.12267 147 7.04242" stroke="url(#paint0_linear_16_119)" stroke-width="7" stroke-linecap="round"/>
         <defs>
           <linearGradient id="paint0_linear_16_119" x1="75.5" y1="14" x2="75.5" y2="4" gradientUnits="userSpaceOnUse">
-            <stop stop-color="white" offset="0"/>
-            <stop offset="1" stop-color="white"/>
+            <stop :stop-color="bottom_gradient[currency]" offset="0"/>
+            <stop offset="1" stop-color="#4D91A5"/>
           </linearGradient>
+
         </defs>
       </svg>
 
@@ -62,6 +63,10 @@ export default {
         "BTC": "Bitcoin",
         "ETH": "Ethereum",
       },
+      bottom_gradient: {
+        BTC: "#592795",
+        ETH: "#091BA9"
+    }
     }
   },
   created() {
@@ -72,7 +77,6 @@ export default {
       this.$el.querySelector(".day-change p").classList.add("negative");
     }
     this.$el.querySelector(".market-cap p").style.color = this.colors[this.currency];
-    console.log(this.$el.querySelector(".market-cap p"));
   },
 }
 </script>
@@ -120,6 +124,16 @@ div.transaction{
     background-color: black;
     color: white;
     font-weight: 500;
+  }
+}
+@media screen and (max-width: 768px){
+  div.transaction{
+    margin: 20px 0;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    button{
+      width: 100%;
+    }
   }
 }
 </style>

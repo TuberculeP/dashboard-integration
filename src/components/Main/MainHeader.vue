@@ -18,9 +18,6 @@ export default {
 
 <style scoped lang="scss">
 header{
-  position: sticky;
-  z-index: 1;
-  top: 0;
   display: flex;
   justify-content: space-between;align-items: center;
   margin-right: 50px;
@@ -42,6 +39,19 @@ header{
       padding: 10px;
       font-size: 1rem;
       width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 768px){
+  header{
+    display: block;
+    margin: 0;
+    h2{
+      margin: 1rem 0;
+      text-align: center;
+    }
+    div.search{
+      margin: 1rem auto;
     }
   }
 }

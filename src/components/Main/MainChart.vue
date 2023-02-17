@@ -215,4 +215,18 @@ div.chart{
     height: 100%;
   }
 }
+@media screen and (max-width: 768px) {
+  div.chart{
+    width: 90vw;
+    .chart-header{
+      flex-direction: column-reverse;
+      gap: 10px;
+    }
+    div.main-chart{
+      padding-top: 0;
+      padding-bottom: 50px;
+    }
+  }
+
+}
 </style>
